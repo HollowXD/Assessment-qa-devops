@@ -1,0 +1,2 @@
+Bug 1: When you win, the score doesn't add 1 to the win total, it adds it to the losses anyways.
+Bug 2: See All Bots is not displaying all bots.
