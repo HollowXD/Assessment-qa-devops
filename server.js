@@ -1,16 +1,14 @@
 const express = require("express");
+const rollbar = require("rollbar")
 const bots = require("./src/botsData");
 const shuffle = require("./src/shuffle");
-const app = express();
 
-var rollbar = require("rollbar")
 var rollbar = new Rollbar({
   accessToken: '05d3a0c83c4a4dcd9b59c31af907bc2b',
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
 
-app.use(express.static(`${__dirname}/public`))
 app.listen(4000, () => console.log(`server running on 4000`))
 
 const playerRecord = {
@@ -18,7 +16,10 @@ const playerRecord = {
   losses: 0,
 };
 
+const app = express();
+
 app.use(express.json());
+app.use(express.static(`${__dirname}/public`));
 
 // Add up the total health of all the robots
 const calculateTotalHealth = (robots) =>
