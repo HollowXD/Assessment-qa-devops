@@ -1,2 +1,28 @@
-Bug 1: When you win, the score doesn't add 1 to the win total, it adds it to the losses anyways.
-Bug 2: See All Bots is not displaying all bots.
+Test Case 1:
+    Description: Tallying up wins/losses
+    Steps:
+        1. Go to site http://localhost:8000
+        2. Assemble a Team
+        3. Press Duel
+        4. Depending on if you win or you lose, the counter should go up in the respective counters.
+    Expected Results: Wins/Losses to be recorded in respecitve areas
+    Actual Result: Wins were being counted as losses
+
+Test Case 2:
+    Description: See all the bots
+    Steps:
+        1. Go to site http://localhost:8000
+        2. Click on "See All Bots" Button
+    Expected Results: Should list all the bots
+    Actual Result: Button wasn't functioning
+
+Test Case 3:
+    Description: Refreshing website will reset the score
+    Steps:
+        1. Go to site http://localhost:8000
+        2. Assemble a team
+        3. Press Duel
+        4. Recieve a win or loss and have it added to the score
+        5. Refresh page
+    Expected Results: Score will be resetted
+    Actual Result: Score did not change after Refresh
